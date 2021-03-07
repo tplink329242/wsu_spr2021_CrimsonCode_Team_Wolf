@@ -14,7 +14,7 @@ str_message = []
 receiver_name = ['john']
 
 #send message using connection
-my_connection.tell_others_msg(receiver_name, 'hello world!')
+my_connection.tell_others_msg(receiver_name, 'hello world 1!')
 
 #close the connection
-del my_connection
+#del my_connection

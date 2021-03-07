@@ -129,14 +129,15 @@ class PyConFunction(object):
 		self.msg_file_received_list = []
 
 	def __del__(self):
-		self.sock_ec2.close()
+		#self.sock_ec2.close()
+		self.sock_close()
 		return 0
 
 	def get_server_message(self):
 
 		global global_msg_str_received_list
 		try:
-			self.msg_str_received_list = global_msg_str_received_list[0]
+			self.msg_str_received_list = global_msg_str_received_list
 						
 		except:
 			pass
