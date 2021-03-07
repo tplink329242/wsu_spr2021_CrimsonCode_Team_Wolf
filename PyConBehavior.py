@@ -3,6 +3,7 @@ import socket
 import json
 import base64
 import threading
+import boto3
 
 #var type
 file_type_dict = {}
@@ -366,5 +367,15 @@ class PyConFunction(object):
 			return receive_content
 		else:
 			return receive_content
+
+	def connect_to_aws_sqs_and_snd_message(sqs_name, sqs_msg_body):
+		sqs_sms = boto3.resource('sqs')
+		queue_sms = sqs_sms.get_queue_by_name(sqs_name)
+		response_sms = queue_sms.send_message(MessageBody=sqs_msg_body)
+		return response_sms
+
+	
+
+		
 
 	
