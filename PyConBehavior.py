@@ -37,6 +37,10 @@ class Thread_Sub_Client (threading.Thread):
 		self.name = name
 		self.sock_connection = sock_connection
 
+	def __del__(self):
+		self.sock_connection.close()
+		return 0
+
 	def run(self):
 		self.Thread_Sub_In(self.sock_connection)
 

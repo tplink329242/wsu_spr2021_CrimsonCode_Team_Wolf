@@ -1,6 +1,5 @@
 import PyConBehavior
 
-
 #init connection
 my_connection = PyConBehavior.PyConFunction()
 
@@ -14,7 +13,11 @@ str_message = []
 receiver_name = ['john']
 
 #send message using connection
-my_connection.tell_others_msg(receiver_name, 'hello world 1!')
+my_connection.tell_others_msg(receiver_name, 'hello world!')
+my_connection.sleeptime(5)
 
-#close the connection
-#del my_connection
+str_message = my_connection.get_server_message()
+if str_message != []:
+	print(str(str_message))
+#	
+
